@@ -1,0 +1,6 @@
+-   id: autoflake
+    name: autoflake
+    entry: autoflake
+    language: python
+    files: \.py$
+    args: ['--in-place', '--remove-all-unused-imports', '--exclude=__init__.py,conftest.py']
