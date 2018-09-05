@@ -5,5 +5,7 @@ setup(
     version="0.1",
     install_requires = [
         'autoflake==1.2',
+        'seed-isort-config==1.2',
+        'isort==4.3.3',
     ]
 )
