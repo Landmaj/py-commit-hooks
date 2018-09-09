@@ -1,26 +1,36 @@
--   id: autoflake
-    name: autoflake
-    description: Remove unused imports
-    entry: autoflake
-    language: python
-    files: \.py$
-    exclude: (__init__.py|conftest.py)
-    args: ['--in-place', '--remove-all-unused-imports']
+- id: autoflake
+  name: autoflake
+  description: Remove unused imports
+  entry: autoflake
+  language: python
+  files: \.py$
+  exclude: (__init__.py|conftest.py)
+  args: ['--in-place', '--remove-all-unused-imports']
 
--   id: seed-isort-config
-    name: seed isort known_third_party
-    description: Statically populate the `known_third_party` `isort` setting.
-    entry: seed-isort-config
-    language: python
-    always_run: true
-    pass_filenames: false
-    minimum_pre_commit_version: 0.14.0
+- id: seed-isort-config
+  name: seed isort known_third_party
+  description: Statically populate the `known_third_party` `isort` setting.
+  entry: seed-isort-config
+  language: python
+  always_run: true
+  pass_filenames: false
+  minimum_pre_commit_version: 0.14.0
 
 
--   id: isort
-    name: isort
-    description: Automatically sort all imports
-    entry: isort
-    language: python
-    files: \.py$
-    args: []
+- id: isort
+  name: isort
+  description: Automatically sort all imports
+  entry: isort
+  language: python
+  files: \.py$
+  args: []
+
+
+- id: black
+  name: black
+  description: Automatically format code to comply with PEP8
+  entry: black
+  language: python
+  language_version: python3.6
+  files: \.py$
+
