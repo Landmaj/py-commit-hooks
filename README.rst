@@ -63,12 +63,15 @@ The config file from this repository will produce output like this:
     from datetime import datetime
 
     # third party libraries
+    import flask
     import pytz
 
     # your packages and modules
     import something
     from your_package import (
+        # sorted alphabetically
         first_module,
+        fourth_module,
         second_module,
         third_module as th,
     )
