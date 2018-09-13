@@ -43,7 +43,7 @@ methods.
     - id: isort
     - id: black
 
-If you do not want some hooks, remove it (or comment it out) from
+Remove any hooks that you don not want (or comment them out) from
 ``.pre-commit-hooks.yaml``. Keep in mind that seed-isort-config and
 isort should be kept together, otherwise isort will not distinguish
 your modules and packages from third party libraries.
