@@ -1,3 +1,11 @@
+- id: black
+  name: black
+  description: Automatically format code to comply with PEP8
+  entry: black
+  language: python
+  language_version: python3.6
+  files: \.py$
+
 - id: autoflake
   name: autoflake
   description: Remove unused imports
@@ -24,13 +32,3 @@
   language: python
   files: \.py$
   args: []
-
-
-- id: black
-  name: black
-  description: Automatically format code to comply with PEP8
-  entry: black
-  language: python
-  language_version: python3.6
-  files: \.py$
-

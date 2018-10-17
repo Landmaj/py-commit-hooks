@@ -21,10 +21,10 @@ methods.
   - repo: https://github.com/Landmaj/py-commit-hooks.git
     rev: v1.1.0
     hooks:
+    - id: black
     - id: autoflake
     - id: seed-isort-config
     - id: isort
-    - id: black
 
 2. Store the hooks locally
     If you do not want to link to this repository, you can copy the
@@ -38,45 +38,19 @@ methods.
   repos:
   - repo: local
     hooks:
+    - id: black
     - id: autoflake
     - id: seed-isort-config
     - id: isort
-    - id: black
 
 Remove any hooks that you do not want (or comment them out) from
 ``.pre-commit-hooks.yaml``. Keep in mind that seed-isort-config and
 isort should be kept together, otherwise isort will not distinguish
 your modules and packages from third party libraries.
 
-Order in which the hooks are declared is important: unused imports
-should be removed before running isort, otherwise the result may
-not be as expected. Same applies to seed-isort-config.
-
-Because some of the isort options do not work with pre-commit's
-``args``, you should copy ``.isort.cfg`` to you project's main directory.
-The config file from this repository will produce output like this:
-
-.. code:: python
-
-    # standard library
-    import collections
-    from datetime import datetime
-
-    # third party libraries
-    import flask
-    import pytz
-
-    # your packages and modules
-    import something
-    from your_package import (
-        # sorted alphabetically
-        first_module,
-        fourth_module,
-        second_module,
-        third_module as th,
-    )
-
-Refer to isort_ documentation if you want to modify this behavior.
+You should also copy ``.isort.cfg`` together with ``.pre-commit-hooks.py``.
+The settings should not be modified (except for ``not_skip=__init__.py`` which can be safely removed) if you want to use Black.
+Otherwise it may cause commits to fail all the time due to conflicts between Black and isort formatting.
 
 Running the hooks
 +++++++++++++++++
