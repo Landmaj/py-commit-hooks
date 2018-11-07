@@ -58,10 +58,12 @@ Running the hooks
 After adding the hooks, install pre-commit either globally or in the
 virtual environment - it does not matter, as it will create it's own
 virtual environment to run hooks in anyway. I recommend using pipsi_.
+Run ``pre-commit install`` in the same directory where ``.pre-commit-config.yaml``
+is and wait a few second/minutes for initial setup.
 
 After that, the hooks will run automatically during each commit on all
 staged files. You can force execution on all files using
-``pre-commit run --all-files``. Each hooks can also be used separately:
+``pre-commit run --all-files``. Each hook can also be used separately:
 ``pre-commit run black`` or ``pre-commit run black --all-files``. Refer
 to pre-commit_ documentation for more information.
 
