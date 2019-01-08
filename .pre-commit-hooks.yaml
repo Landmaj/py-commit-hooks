@@ -5,6 +5,7 @@
   language: python
   language_version: python3.6
   files: \.py$
+  additional_dependencies: ["black"]
 
 - id: autoflake
   name: autoflake
@@ -14,6 +15,7 @@
   files: \.py$
   exclude: (__init__.py|conftest.py)
   args: ['--in-place', '--remove-all-unused-imports']
+  additional_dependencies: ["autoflake"]
 
 - id: seed-isort-config
   name: seed isort known_third_party
@@ -23,7 +25,7 @@
   always_run: true
   pass_filenames: false
   minimum_pre_commit_version: 0.14.0
-
+  additional_dependencies: ["seed-isort-config"]
 
 - id: isort
   name: isort
@@ -31,4 +33,5 @@
   entry: isort
   language: python
   files: \.py$
-  args: []
+  additional_dependencies: ["isort"]
+
