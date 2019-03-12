@@ -1,0 +1,38 @@
+repos:
+- repo: local
+  hooks:
+
+  - id: autoflake
+    name: autoflake
+    entry: autoflake
+    language: python
+    files: \.py$
+    exclude: (__init__.py|conftest.py)
+    args: ['--in-place', '--remove-all-unused-imports']
+    additional_dependencies: ["autoflake"]
+
+  - id: isort
+    name: isort
+    entry: isort
+    language: python
+    files: \.py$
+    additional_dependencies: [
+      "git+https://github.com/timothycrosley/isort.git@94ed1dd36f0bc00a2caec2947496417842cf1037",
+      "toml==0.10.0",
+    ]
+
+  - id: black
+    name: black
+    entry: black
+    language: python
+    language_version: python3.6
+    files: \.py$
+    additional_dependencies: ["git+https://github.com/ambv/black.git@2ae5ce1e6ee036b48db48342512f6d3726f77682"]
+
+  - id: flake8
+    name: flake8
+    entry: flake8
+    language: python
+    files: \.py$
+    additional_dependencies: ["flake8==3.7.6"]
+
