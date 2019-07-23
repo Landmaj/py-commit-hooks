@@ -6,32 +6,22 @@ This is a collection of pre-commit hooks used in my projects.
 Usage
 =====
 
-You can add pre-commit hooks included in this repository using two
-methods.
-
-1. Point pre-commit to this repository
-    Add ``.pre-commit-config.yaml`` and point it to this repository, listing 
-    the hooks you want to use. It should look like this:
+Add ``.pre-commit-config.yaml`` and point it to this repository, listing
+the hooks you want to use. It should look like this:
 
 .. code:: YAML
 
   repos:
   - repo: https://github.com/Landmaj/py-commit-hooks.git
-    rev: v1.2.0
+    rev: v1.3.0
     hooks:
     - id: autoflake
     - id: isort
     - id: black
     - id: flake8
 
-2. Store the hooks locally
-    Copy ``.pre-commit-config.yaml`` to your repository and remove any hooks
-    that you do not want.
+You should also copy ``pyproject.toml`` to your repository.
 
-In both cases you should also copy  ``pyproject.toml``. The settings should not 
-be modified (except for ``not_skip=__init__.py`` which can be safely removed 
-and ``known_first_party``) if you want to use Black. Otherwise it may cause commits 
-to fail all the time due to conflicts between Black and isort formatting.
 
 Running the hooks
 +++++++++++++++++
