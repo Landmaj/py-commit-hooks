@@ -42,10 +42,13 @@ If you have global hooks, pre-commit will complain and will not run.
 To fix this, you have to remove them:
 ``git config --global --unset-all core.hooksPath``
 
+
+License
+=======
+
+This project is released under the MIT_ license.
+
+
 .. _pipx: https://github.com/pipxproject/pipx
 .. _pre-commit: https://pre-commit.com/
-
-
-## License
-
-This project is released under the [MIT License](LICENSE).
+.. _MIT: LICENSE
