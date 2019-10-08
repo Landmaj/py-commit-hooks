@@ -45,3 +45,7 @@ To fix this, you have to remove them:
 .. _pipx: https://github.com/pipxproject/pipx
 .. _pre-commit: https://pre-commit.com/
 
+
+## License
+
+This project is released under the [MIT License](LICENSE).
