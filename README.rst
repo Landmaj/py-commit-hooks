@@ -13,7 +13,7 @@ the hooks you want to use. It should look like this:
 
   repos:
   - repo: https://github.com/Landmaj/py-commit-hooks.git
-    rev: v1.3.2
+    rev: v1.4.0
     hooks:
     - id: autoflake
     - id: isort

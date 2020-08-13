@@ -5,7 +5,7 @@
   files: \.py$
   exclude: (__init__.py|conftest.py)
   args: ['--in-place', '--remove-all-unused-imports']
-  additional_dependencies: ["autoflake==1.3"]
+  additional_dependencies: ["autoflake==1.3.1"]
 
 - id: isort
   name: isort
@@ -13,18 +13,18 @@
   language: python
   files: \.py$
   additional_dependencies: [
-    "isort==4.3.21",
-    "toml==0.10.0",
+    "isort==5.4.1",
+    "toml==0.10.1",
   ]
 
 - id: black
   name: black
   entry: black
   language: python
-  language_version: python3.6
+  language_version: python
   files: \.py$
   additional_dependencies: [
-    "git+https://github.com/psf/black.git@ffa676cd7d332e9fa5808d824f5a31f03ab9a5d0",
+    "git+https://github.com/psf/black.git@149b38d67430f0c580a05c821db767592e7d55e2",
   ]
 
 - id: flake8
@@ -33,4 +33,4 @@
   language: python
   files: \.py$
   args: ['--max-line-length=88']
-  additional_dependencies: ["flake8==3.7.8"]
+  additional_dependencies: ["flake8==3.8.3"]
